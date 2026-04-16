@@ -1,0 +1,17 @@
+{
+  "name": "KoinX Tax Loss Harvesting",
+  "short_name": "KoinX Harvest",
+  "description": "Reduce your crypto tax liability by harvesting unrealised losses to offset capital gains.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4F6FA",
+  "theme_color": "#0052FE",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

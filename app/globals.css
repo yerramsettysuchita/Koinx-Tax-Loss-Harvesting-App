@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ──────────────────────────────────────── */
+:root {
+  --bg: #F4F6FA;
+  --card: #ffffff;
+  --border: #E5E9F2;
+  --border-soft: #F0F2F8;
+  --text: #0F1629;
+  --text-mute: #64748B;
+  --text-faint: #94A3B8;
+  --row-hover: #F8FAFC;
+  --row-selected: #EFF4FF;
+  --table-head: #F8FAFD;
+  --notice-bg: #F0F6FF;
+  --notice-border: #B6D4FE;
+  --check-border: #CBD5E1;
+  --tooltip-bg: #1E293B;
+  --tooltip-text: #F8FAFC;
+}
+
+[data-theme='dark'] {
+  --bg: #0A0E1A;
+  --card: #0F1729;
+  --border: #1F2A40;
+  --border-soft: #172032;
+  --text: #F3F4F6;
+  --text-mute: #8B9EC5;
+  --text-faint: #4B5E80;
+  --row-hover: #131D30;
+  --row-selected: #142040;
+  --table-head: #0D1525;
+  --notice-bg: #0F1B33;
+  --notice-border: #264478;
+  --check-border: #2D3E5C;
+  --tooltip-bg: #E2E8F0;
+  --tooltip-text: #0F1629;
+}
+
+/* ─── Tailwind v4 Theme Registration ────────────────────── */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-text: var(--text);
+  --color-text-mute: var(--text-mute);
+  --color-text-faint: var(--text-faint);
+  --color-row-hover: var(--row-hover);
+  --color-row-selected: var(--row-selected);
+  --color-table-head: var(--table-head);
+  --color-notice-bg: var(--notice-bg);
+  --color-notice-border: var(--notice-border);
+  --color-check-border: var(--check-border);
+  --color-tooltip-bg: var(--tooltip-bg);
+  --color-tooltip-text: var(--tooltip-text);
+
+  /* Brand / semantic */
+  --color-brand: #0052FE;
+  --color-brand-hover: #0040CC;
+  --color-gain: #0FBA83;
+  --color-loss: #E64646;
+  --color-logo-x: #F7931A;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ─── Harvest Gradient (After Harvesting card) ───────────── */
+.harvest-gradient {
+  background: linear-gradient(135deg, #3B7BF7 0%, #1E5BD8 100%);
+}
+
+/* ─── Skeleton shimmer ───────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--border-soft) 25%,
+    var(--border) 50%,
+    var(--border-soft) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
